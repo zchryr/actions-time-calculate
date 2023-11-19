@@ -8,7 +8,7 @@ outputs:
 
 runs:
   using: 'node20'
-  main: 'dist/now.js'
+  main: 'now/dist/now.js'
 
 branding:
   icon: 'npm'

@@ -12,7 +12,7 @@ outputs:
 
 runs:
   using: 'node20'
-  main: 'dist/calculate.js'
+  main: 'calculate/dist/calculate.js'
 
 branding:
   icon: 'npm'
