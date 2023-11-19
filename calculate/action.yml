@@ -7,5 +7,12 @@ outputs:
     description: The calculated time in JSON.
 
 runs:
-  using: 'node20'
-  main: 'index.js'
+  using: 'composite'
+  steps:
+    - run: npm install
+      shell: bash
+      working-directory: "./calculate"
+
+    - run: node index.js
+      shell: bash
+      working-directory: "./calculate
