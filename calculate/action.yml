@@ -9,6 +9,8 @@ outputs:
 runs:
   using: 'composite'
   steps:
+    uses: actions/checkout@v4
+
     - run: |
         ls -al
         pwd
