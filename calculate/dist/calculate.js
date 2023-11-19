@@ -26158,8 +26158,6 @@ const result = JSON.stringify({
 // Use @actions/core to set the output
 core.setOutput('TIME_CALCULATED', result);
 
-console.log(result);
-
 })();
 
 module.exports = __webpack_exports__;
