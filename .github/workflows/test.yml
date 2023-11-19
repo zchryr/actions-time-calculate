@@ -35,7 +35,7 @@ jobs:
         uses: zchryr/build-notifier-action@v1.0.11
         with:
           body: ${{ steps.calc.outputs.TIME_CALCULATED }}"
-          url: ${{ secrets.TINES_WEBHOOK }}
+          url: ${{ secrets.WEBHOOK }}
           response_code: 201
           repo: ${{ github.repository }}
           workflow: $WORKFLOW
