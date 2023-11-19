@@ -1,0 +1,37 @@
+name: 'CI - Package - Calculate'
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'calculate/index.js'
+  workflow_dispatch: # Manual.
+
+jobs:
+  package:
+    name: Package distribution files
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 'calculate'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Install packages
+        run: npm install
+
+      - name: Package
+        run: npm run package
+
+      - name: Commit
+        run: |
+          mv index.js calculate.js
+          git config --global user.name "GitHub Actions"
+          git add dist/
+          git commit -m "Update dist" || echo "No changes to commit"
+          git push origin main

@@ -7,14 +7,9 @@ outputs:
     description: The current time in epoch.
 
 runs:
-  using: 'composite'
-  steps:
-    - uses: actions/checkout@v4
+  using: 'node20'
+  main: 'dist/now.js'
 
-    - run: npm install
-      shell: bash
-      working-directory: 'now'
-
-    - run: node index.js
-      shell: bash
-      working-directory: 'now'
+branding:
+  icon: 'npm'
+  color: 'red'

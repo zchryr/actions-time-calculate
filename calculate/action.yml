@@ -11,14 +11,9 @@ outputs:
     description: The calculated time in JSON.
 
 runs:
-  using: 'composite'
-  steps:
-    - uses: actions/checkout@v4
+  using: 'node20'
+  main: 'dist/calculate.js'
 
-    - run: npm install
-      shell: bash
-      working-directory: 'calculate'
-
-    - run: node index.js
-      shell: bash
-      working-directory: 'calculate'
+branding:
+  icon: 'npm'
+  color: 'red'
