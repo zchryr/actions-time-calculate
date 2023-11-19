@@ -1,9 +1,9 @@
-// Node.js script to read epoch time from now.txt, compare with current time, and output the difference to a JSON file
+// calculate.js - Reads the TIME_NOW environment variable and calculates the elapsed time
 
-const fs = require('fs');
+const core = require('@actions/core');
 
-// Read the epoch time from now.txt
-const savedEpochTime = parseInt(fs.readFileSync('now.txt', 'utf8'));
+// Read the TIME_NOW environment variable
+const savedEpochTime = parseInt(core.getInput('TIME_NOW'));
 
 // Get the current epoch time in seconds
 const currentEpochTime = Math.floor(new Date().getTime() / 1000);
@@ -16,12 +16,10 @@ const minutes = Math.floor(timeDifference / 60);
 const seconds = timeDifference % 60;
 
 // Prepare the result as a JSON object
-const result = {
+const result = JSON.stringify({
   minutes: minutes,
   seconds: seconds,
-};
+});
 
-// Write the result to a JSON file
-fs.writeFileSync('timeElapsed.json', JSON.stringify(result, null, 2));
-
-console.log('Time elapsed written to timeElapsed.json');
+// Use @actions/core to set the output
+core.setOutput('TIME_CALCULATED', result);

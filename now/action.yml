@@ -2,6 +2,10 @@ name: 'actions-time-calculate: now'
 description: 'Save the current epoch time.'
 author: 'Zachary R'
 
+outputs:
+  TIME_NOW:
+    description: The current time in epoch.
+
 runs:
   using: 'node20'
   main: 'index.js'

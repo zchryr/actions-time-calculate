@@ -2,7 +2,10 @@ name: 'actions-time-calculate: calculate'
 description: 'Used the previously saved epoch time and calculate the difference.'
 author: 'Zachary R'
 
+outputs:
+  TIME_CALCULATED:
+    description: The calculated time in JSON.
+
 runs:
   using: 'node20'
   main: 'index.js'
-  post: 'post.js'
