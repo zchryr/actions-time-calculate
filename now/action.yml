@@ -11,8 +11,8 @@ runs:
   steps:
     - run: npm install
       shell: bash
-      working-directory: "./now"
+      working-directory: './now'
 
     - run: node index.js
       shell: bash
-      working-directory: "./now
+      working-directory: './now'

@@ -11,8 +11,8 @@ runs:
   steps:
     - run: npm install
       shell: bash
-      working-directory: "./calculate"
+      working-directory: './calculate'
 
     - run: node index.js
       shell: bash
-      working-directory: "./calculate
+      working-directory: './calculate'
