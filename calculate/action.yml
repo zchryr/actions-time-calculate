@@ -12,6 +12,7 @@ runs:
     - run: |
         ls -al
         pwd
+      shell: bash
 
     - run: npm install
       shell: bash
