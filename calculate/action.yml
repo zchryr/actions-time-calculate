@@ -2,6 +2,10 @@ name: 'actions-time-calculate: calculate'
 description: 'Used the previously saved epoch time and calculate the difference.'
 author: 'Zachary R'
 
+inputs:
+  TIME_NOW:
+    description: Epoch time.
+
 outputs:
   TIME_CALCULATED:
     description: The calculated time in JSON.
@@ -10,11 +14,6 @@ runs:
   using: 'composite'
   steps:
     - uses: actions/checkout@v4
-
-    - run: |
-        ls -al
-        pwd
-      shell: bash
 
     - run: npm install
       shell: bash
