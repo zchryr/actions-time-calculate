@@ -1,0 +1,7 @@
+name: 'actions-time-calculate: now'
+description: 'Save the current epoch time.'
+author: 'Zachary R'
+
+runs:
+  using: 'node20'
+  main: 'index.js'
