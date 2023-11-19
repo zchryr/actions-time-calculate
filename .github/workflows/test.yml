@@ -15,6 +15,7 @@ jobs:
 
     steps:
       - name: now
+        id: now
         uses: zchryr/actions-time-calculate/now@main
 
       - name: sleep
@@ -22,6 +23,7 @@ jobs:
           sleep 5
 
       - name: calculate
+        id: calculate
         uses: zchryr/actions-time-calculate/calculate@main
         with:
           TIME_NOW: ${{ steps.now.outputs.TIME_NOW }}
@@ -34,7 +36,7 @@ jobs:
       - name: Build Notification
         uses: zchryr/build-notifier-action@v1.0.11
         with:
-          body: '${{ steps.calculate.outputs.TIME_CALCULATED }}'
+          body: ${{ steps.calculate.outputs.TIME_CALCULATED }}
           url: ${{ secrets.WEBHOOK }}
           response_code: 201
           repo: ${{ github.repository }}
