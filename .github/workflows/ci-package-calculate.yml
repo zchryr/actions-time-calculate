@@ -30,7 +30,7 @@ jobs:
 
       - name: Commit
         run: |
-          mv index.js calculate.js
+          mv dist/index.js dist/calculate.js
           git config --global user.name "GitHub Actions"
           git add dist/
           git commit -m "Update dist" || echo "No changes to commit"
