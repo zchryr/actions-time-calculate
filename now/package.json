@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zchryr/actions-time-calculate.git#main"
+    "url": "git+https://github.com/zchryr/time-calculate.git#main"
   },
   "author": "Zachary R",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zchryr/actions-time-calculate/issues"
+    "url": "https://github.com/zchryr/time-calculate/issues"
   },
-  "homepage": "https://github.com/zchryr/actions-time-calculate/tree/main#readme",
+  "homepage": "https://github.com/zchryr/time-calculate/tree/main#readme",
   "dependencies": {
     "@actions/core": "^1.10.1"
   },
